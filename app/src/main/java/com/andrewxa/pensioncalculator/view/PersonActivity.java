@@ -17,9 +17,11 @@ public class PersonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_person);
         textView = findViewById(R.id.personIndex);
 
-        Intent intent = getIntent();
-        String index = intent.getStringExtra("index");
-        textView.setText(index);
+
+        Bundle bundle = getIntent().getExtras();
+        double index = bundle.getDouble("index");
+
+        textView.setText("אינדרקס :" + index);
 
     }
 }

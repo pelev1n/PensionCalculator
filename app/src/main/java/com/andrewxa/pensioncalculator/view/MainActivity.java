@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     EditText salary;
     Button getPersonIndex;
 
-    Map<String,String> personData = new HashMap<>();
     Contract.Presenter presenter;
 
     @Override
@@ -36,12 +35,11 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         presenter = new Presenter(this, this);
 
         initPersonPage();
-        initPersonData();
 
         getPersonIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (setPerson(personData)) {
+                if (setPerson(initPersonData())) {
                     getPersonIndex();
                 }
             }
@@ -49,24 +47,36 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     }
 
     public void initPersonPage() {
-        age = findViewById(R.id.age);
+        age = (EditText) findViewById(R.id.age);
         gender = findViewById(R.id.genderSpinner);
-        retireAge = findViewById(R.id.retireAge);
+        retireAge = (EditText)findViewById(R.id.retireAge);
         family = findViewById(R.id.familySpinner);
-        children = findViewById(R.id.children);
+        children = (EditText)findViewById(R.id.children);
         job = findViewById(R.id.jobStatusSpinner);
         salary = findViewById(R.id.salaryAmount);
         getPersonIndex = findViewById(R.id.getPersonIndex);
     }
 
-    public void initPersonData() {
-        personData.put("age",age.toString());
+    public Map<String,String> initPersonData() {
+        Map<String,String> personData = new HashMap<>();
+
+        System.out.println("age.getText().toString() = " + Integer.parseInt(age.getText().toString()));
+        System.out.println("gender.getSelectedItem().toString() = " + gender.getSelectedItem().toString());
+        System.out.println("retireAge.getText().toString() = " + retireAge.getText().toString());
+        System.out.println("family.getSelectedItem().toString() = " + family.getSelectedItem().toString());
+        System.out.println("children.getText().toString() = " + children.getText().toString());
+        System.out.println("job.getSelectedItem().toString() = " + job.getSelectedItem().toString());
+        System.out.println("salary.getText().toString() = " + salary.getText().toString());
+
+        personData.put("age",age.getText().toString());
         personData.put("gender",gender.getSelectedItem().toString());
-        personData.put("retireAge",retireAge.toString());
+        personData.put("retireAge",retireAge.getText().toString());
         personData.put("family",family.getSelectedItem().toString());
-        personData.put("children",children.toString());
+        personData.put("children",children.getText().toString());
         personData.put("job",job.getSelectedItem().toString());
-        personData.put("salary",salary.toString());
+        personData.put("salary",salary.getText().toString());
+
+        return personData;
     }
 
 
@@ -83,7 +93,9 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     @Override
     public void showPersonIndex(double index) {
         Intent intent = new Intent(this,PersonActivity.class);
-        intent.putExtra("index",index);
+        Bundle bundle = new Bundle();
+        bundle.putDouble("index",index);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

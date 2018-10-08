@@ -72,8 +72,18 @@ public class Person implements Contract.Model{
     }
 
     // Formula for calculating Person's index
+
     @Override
     public double calculateIndex() {
-        return 1;
+        /*double index = (double) age + retireAge + children + salaryAmount
+                + familyStatus.length()
+                + jobStatus.length();
+        if(male) {
+            index += 2;
+        }*/
+
+        double index = 1;
+
+        return index;
     }
 }
