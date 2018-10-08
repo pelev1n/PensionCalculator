@@ -1,6 +1,8 @@
-package com.andrewxa.pensioncalculator.model;
+package com.andrewxa.pensioncalculator.datasource.model;
 
-public class Person {
+import com.andrewxa.pensioncalculator.datasource.contract.Contract;
+
+public class Person implements Contract.Model{
     private int age;
     private boolean male;
     private boolean children;
@@ -8,7 +10,7 @@ public class Person {
     private String jobStatus;
     private long salaryAmount;
 
-    Person() {
+    public Person() {
 
     }
 
@@ -60,9 +62,10 @@ public class Person {
         this.salaryAmount = salaryAmount;
     }
 
-    // Formula for calculating Person's index
-    public int calculateIndex() {
 
+    // Formula for calculating Person's index
+    @Override
+    public int calculateIndex() {
         return 1;
     }
 }
