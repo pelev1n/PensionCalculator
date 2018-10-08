@@ -2,93 +2,194 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_horizontal_margin">
+    android:padding="20dp">
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Age" />
+        android:ems="10"
+        android:hint="הגיל שלך"
+        android:inputType="number"
+        android:textDirection="rtl"/>
 
-    <EditText
+    <LinearLayout
+        android:id="@+id/genderLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gender"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/age"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Gender" />
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/genderSpinner"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/gender" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:text="מגדר"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/genderBlackLine"
+        android:layout_below="@+id/genderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#a09c9a"/>
+
 
     <EditText
+        android:id="@+id/retireAge"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/genderLayout"
         android:ems="10"
+        android:hint="גיל הפרישה"
+        android:inputType="number"
+        android:textDirection="rtl"/>
+
+    <LinearLayout
+        android:id="@+id/familyStatusLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/retireAge"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/familySpinner"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/family" />
+
+        <TextView
+            android:id="@+id/family"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:text="מצב משפחתי"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/familyBlackLine"
+        android:layout_below="@+id/familyStatusLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#a09c9a"/>
+
+
+    <EditText
         android:id="@+id/children"
-        android:layout_below="@+id/gender"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Children" />
-
-    <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/familyStatusLayout"
         android:ems="10"
-        android:id="@+id/familyStatus"
+        android:hint="מספר ילדים"
+        android:inputType="number"
+        android:textDirection="rtl"/>
+
+
+    <LinearLayout
+        android:id="@+id/jobStatusLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/children"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Family Status" />
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/jobStatusSpinner"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/job" />
+
+        <TextView
+            android:id="@+id/job"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:text="מה הסטאטוס שלך"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/jobStatusLine"
+        android:layout_below="@+id/jobStatusLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#a09c9a"/>
+
+    <TextView
+        android:id="@+id/jobBlackLine"
+        android:layout_below="@+id/familyStatusLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:background="#a09c9a"/>
+
 
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/jobStatus"
-        android:layout_below="@+id/familyStatus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Job Status" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
         android:id="@+id/salaryAmount"
-        android:layout_below="@+id/jobStatus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
-        android:hint="Salary Amount" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/jobStatusLayout"
+        android:ems="10"
+        android:hint="משכורת חודשית"
+        android:inputType="number"
+        android:textDirection="rtl"/>
 
 
     <Button
+        android:id="@+id/getPersonIndex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get pension information"
-        android:id="@+id/getPersonIndex"
-        android:layout_below="@+id/salaryAmount"
+        android:layout_alignEnd="@+id/salaryAmount"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/salaryAmount"
-        android:layout_alignEnd="@+id/salaryAmount" />
+        android:layout_below="@+id/salaryAmount"
+        android:text="Get pension information" />
 </RelativeLayout>

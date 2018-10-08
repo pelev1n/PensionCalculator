@@ -2,6 +2,8 @@ package com.andrewxa.pensioncalculator.datasource.contract;
 
 public interface Contract {
     interface View {
+        boolean setPerson();
+
         void getPersonIndex();
 
         void showPersonIndex();
@@ -9,6 +11,8 @@ public interface Contract {
 
     interface Presenter {
         void requestPersonIndex();
+
+        boolean createNewPerson();
     }
 
     interface Model {

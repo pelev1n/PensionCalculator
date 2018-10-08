@@ -11,10 +11,15 @@ public class Presenter implements Contract.Presenter{
     Context mContext;
     Contract.Model person;
 
-    Presenter(Contract.View view, Context context) {
+    public Presenter(Contract.View view, Context context) {
         this.mView = view;
         this.mContext = context;
+    }
+
+    @Override
+    public boolean createNewPerson() {
         person = new Person();
+        return true;
     }
 
     @Override

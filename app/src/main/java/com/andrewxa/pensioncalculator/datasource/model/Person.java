@@ -5,6 +5,7 @@ import com.andrewxa.pensioncalculator.datasource.contract.Contract;
 public class Person implements Contract.Model{
     private int age;
     private boolean male;
+    private int retireAge;
     private boolean children;
     private String familyStatus;
     private String jobStatus;
