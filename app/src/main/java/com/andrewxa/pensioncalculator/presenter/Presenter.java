@@ -5,6 +5,8 @@ import android.content.Context;
 import com.andrewxa.pensioncalculator.datasource.contract.Contract;
 import com.andrewxa.pensioncalculator.datasource.model.Person;
 
+import java.util.Map;
+
 public class Presenter implements Contract.Presenter{
 
     Contract.View  mView;
@@ -17,13 +19,28 @@ public class Presenter implements Contract.Presenter{
     }
 
     @Override
-    public boolean createNewPerson() {
+    public boolean createNewPerson(Map<String,String> personData) {
         person = new Person();
+        person.setAge(Integer.parseInt(personData.get("age")));
+        person.setMale(isMale(personData.get("gender")));
+        person.setRetireAge(Integer.parseInt(personData.get("retireAge")));
+        person.setFamilyStatus(personData.get("family"));
+        person.setChildren(Integer.parseInt(personData.get("children")));
+        person.setJobStatus(personData.get("job"));
+        person.setSalaryAmount(Long.parseLong(personData.get("salary")));
         return true;
     }
 
     @Override
     public void requestPersonIndex() {
+        double personIndex = person.calculateIndex();
+        mView.showPersonIndex(personIndex);
+    }
 
+    private boolean isMale(String gender){
+        if(gender.contains("גבר")){
+            return true;
+        }
+        return false;
     }
 }

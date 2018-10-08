@@ -149,23 +149,13 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/jobStatusLine"
+        android:id="@+id/jobBlackLine"
         android:layout_below="@+id/jobStatusLayout"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="#a09c9a"/>
-
-    <TextView
-        android:id="@+id/jobBlackLine"
-        android:layout_below="@+id/familyStatusLayout"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="5dp"
-        android:background="#a09c9a"/>
-
-
 
     <EditText
         android:id="@+id/salaryAmount"

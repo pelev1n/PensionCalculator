@@ -6,7 +6,7 @@ public class Person implements Contract.Model{
     private int age;
     private boolean male;
     private int retireAge;
-    private boolean children;
+    private int children;
     private String familyStatus;
     private String jobStatus;
     private long salaryAmount;
@@ -31,11 +31,19 @@ public class Person implements Contract.Model{
         this.male = male;
     }
 
-    public boolean isChildren() {
+    public int getRetireAge() {
+        return retireAge;
+    }
+
+    public void setRetireAge(int retireAge) {
+        this.retireAge = retireAge;
+    }
+
+    public int getChildren() {
         return children;
     }
 
-    public void setChildren(boolean children) {
+    public void setChildren(int children) {
         this.children = children;
     }
 
@@ -63,10 +71,9 @@ public class Person implements Contract.Model{
         this.salaryAmount = salaryAmount;
     }
 
-
     // Formula for calculating Person's index
     @Override
-    public int calculateIndex() {
+    public double calculateIndex() {
         return 1;
     }
 }
