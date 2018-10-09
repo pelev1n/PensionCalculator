@@ -28,6 +28,9 @@ public class Presenter implements Contract.Presenter{
         person.setChildren(Integer.parseInt(personData.get("children")));
         person.setJobStatus(personData.get("job"));
         person.setSalaryAmount(Long.parseLong(personData.get("salary")));
+        person.setPerCompensation(Double.parseDouble(personData.get("perCompensation")));
+        person.setPerEmployer(Double.parseDouble(personData.get("perEmployer")));
+        person.setPerEmployee(Double.parseDouble(personData.get("perEmployee")));
         return true;
     }
 

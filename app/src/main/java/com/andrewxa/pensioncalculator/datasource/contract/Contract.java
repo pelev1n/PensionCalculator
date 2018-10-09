@@ -24,6 +24,10 @@ public interface Contract {
         int getChildren();
         String getFamilyStatus();
         String getJobStatus();
+        double getPerCompensation();
+        double getPerEmployer();
+        double getPerEmployee();
+
 
         void setAge(int age);
         void setMale(boolean male);
@@ -32,6 +36,9 @@ public interface Contract {
         void setFamilyStatus(String familyStatus);
         void setJobStatus(String jobStatus);
         void setSalaryAmount(long salaryAmount);
+        void setPerCompensation(double perCompensation);
+        void setPerEmployer(double perEmployer);
+        void setPerEmployee(double perEmployee);
 
         double calculateIndex();
 

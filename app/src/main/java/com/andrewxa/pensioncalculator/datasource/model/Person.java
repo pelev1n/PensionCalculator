@@ -10,6 +10,10 @@ public class Person implements Contract.Model{
     private String familyStatus;
     private String jobStatus;
     private long salaryAmount;
+    private double perCompensation;
+    private double perEmployer;
+    private double perEmployee;
+
 
     public Person() {
 
@@ -71,18 +75,41 @@ public class Person implements Contract.Model{
         this.salaryAmount = salaryAmount;
     }
 
+    public double getPerCompensation() {
+        return perCompensation;
+    }
+
+    public void setPerCompensation(double perCompensation) {
+        this.perCompensation = perCompensation;
+    }
+
+    public double getPerEmployer() {
+        return perEmployer;
+    }
+
+    public void setPerEmployer(double perEmployer) {
+        this.perEmployer = perEmployer;
+    }
+
+    public double getPerEmployee() {
+        return perEmployee;
+    }
+
+    public void setPerEmployee(double perEmployee) {
+        this.perEmployee = perEmployee;
+    }
+
     // Formula for calculating Person's index
 
     @Override
     public double calculateIndex() {
-        /*double index = (double) age + retireAge + children + salaryAmount
+        double index = (double) age + retireAge + children + salaryAmount
                 + familyStatus.length()
-                + jobStatus.length();
+                + jobStatus.length() + perCompensation + perEmployee + perEmployer;
         if(male) {
             index += 2;
-        }*/
+        }
 
-        double index = 1;
 
         return index;
     }

@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     Spinner job;
     EditText salary;
     Button getPersonIndex;
+    EditText perCompensation;
+    EditText perEmployer;
+    EditText perEmployee;
 
     Contract.Presenter presenter;
 
@@ -55,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         job = findViewById(R.id.jobStatusSpinner);
         salary = findViewById(R.id.salaryAmount);
         getPersonIndex = findViewById(R.id.getPersonIndex);
+        perCompensation = findViewById(R.id.perCompensation);
+        perEmployer = findViewById(R.id.perEmployer);
+        perEmployee = findViewById(R.id.perEmployee);
     }
 
     public Map<String,String> initPersonData() {
@@ -75,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         personData.put("children",children.getText().toString());
         personData.put("job",job.getSelectedItem().toString());
         personData.put("salary",salary.getText().toString());
+        personData.put("perCompensation",perCompensation.getText().toString());
+        personData.put("perEmployer",perEmployer.getText().toString());
+        personData.put("perEmployee",perEmployee.getText().toString());
 
         return personData;
     }

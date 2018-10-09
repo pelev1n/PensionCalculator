@@ -172,6 +172,50 @@
         android:textDirection="rtl"/>
 
 
+
+    <EditText
+        android:id="@+id/perCompensation"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/salaryAmount"
+        android:ems="10"
+        android:hint="אחוז הפרשה לפיצויים"
+        android:inputType="numberDecimal"
+        android:textDirection="rtl"/>
+
+    <EditText
+        android:id="@+id/perEmployer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/perCompensation"
+        android:ems="10"
+        android:hint="אחוז הפרשה - מעסיק"
+        android:inputType="numberDecimal"
+        android:textDirection="rtl"/>
+
+    <EditText
+        android:id="@+id/perEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/perEmployer"
+        android:ems="10"
+        android:hint="אחוז הפרשה - עובד"
+        android:inputType="numberDecimal"
+        android:textDirection="rtl"/>
+
+
     <Button
         android:id="@+id/getPersonIndex"
         android:layout_width="wrap_content"
@@ -180,6 +224,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/salaryAmount"
-        android:layout_below="@+id/salaryAmount"
+        android:layout_below="@+id/perEmployee"
         android:text="חישוב אינדקס" />
 </RelativeLayout>
